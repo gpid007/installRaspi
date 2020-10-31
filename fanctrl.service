@@ -1,0 +1,13 @@
+[Unit]
+Description=Fan Control
+After=default.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /opt/fanctrl/fan_ctrl.py
+Restart=always
+
+[Install]
+WantedBy=default.target
+

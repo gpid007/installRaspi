@@ -1,0 +1,40 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+=",
+        "command": "workbench.action.terminal.focus"
+    },{
+        "key": "ctrl+=",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },{
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorTextFocus"
+    },{
+        "key": "ctrl+shift+l",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorTextFocus"
+    },{
+        "key": "ctrl+shift+t",
+        "command": "editor.action.transformToTitlecase",
+        "when":
+    },{
+        "key": "f9",
+        "command": "editor.action.sortLinesAscending"
+    },{
+        "key": "alt+b",
+        "command": "cursorWordEndLeft"
+    },{
+        "key": "alt+f",
+        "command": "cursorWordEndRight"
+    },{
+        "key": "alt+right",
+        "command": "cursorWordEndRight",
+        "when": "terminalFocus"
+    },{
+        "key": "alt+left",
+        "command": "cursorWordEndLeft",
+        "when": "terminalFocus"
+    }
+]

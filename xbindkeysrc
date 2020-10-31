@@ -1,0 +1,6 @@
+# Close
+    "xte 'keydown Alt_L' 'keydown F4' 'keyup Alt_L' 'keyup F4'"
+    b:9
+# Minimize
+    "xte 'keydown Alt_L' 'keydown F9' 'keyup Alt_L' 'keyup F9'"
+    b:8
