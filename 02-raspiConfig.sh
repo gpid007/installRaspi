@@ -8,7 +8,7 @@ fi
 # INPUT
 newHostName='raspi'
 countryCode='AT'
-memSplitMb='256'
+memSplitMb='128'
 
 # SET
 raspi-config nonint do_memory_split $memSplitMb
