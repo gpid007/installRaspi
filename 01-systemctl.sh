@@ -7,6 +7,7 @@ fi
 
 # CLEANUP USER CREATION
 userdel -r 'pi'
+swapoff -a
 
 # FAN-CONTROL AND FONTS
 mkdir -p /opt/fanctrl/
@@ -19,11 +20,11 @@ sed -i '$s/$/ usbhid.mousepoll=0/' /boot/cmdline.txt
 sed -i '$agrp:win_toggle_space=Win+Space' /usr/share/lxpanel/xkeyboardconfig/toggle.cfg
 localectl set-x11-keymap us,de pc105 , grp:win_space_toggle
 
-# ENABLE ZRAM
-zramUrl='https://raw.githubusercontent.com/novaspirit/rpi_zram/master/zram.sh'
-curl -O /usr/bin/zram.sh $zramUrl
-chmod +x /usr/bin/zram.sh
-sed -i '$ i\/usr/bin/zram.sh &' /etc/rc.local
+# # ENABLE ZRAM
+# zramUrl='https://raw.githubusercontent.com/novaspirit/rpi_zram/master/zram.sh'
+# curl -O /usr/bin/zram.sh $zramUrl
+# chmod +x /usr/bin/zram.sh
+# sed -i '$ i\/usr/bin/zram.sh &' /etc/rc.local
 
 # # SET KEYBOARD LAYOUTS
 # setxkbmap                               \
