@@ -17,8 +17,9 @@ ohMyBashUrl='https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/
 ps1Sub='PS1="${bold_cyan}\\u ${white}${AWS_PROFILE} ${bold_cyan}\\W $(scm_prompt_char_info)${ret_status}${normal}\\$ "'
 bash -c "$(curl -fsSL $ohMyBashUrl)"
 # sed -e '/PS1/ s/^#*/#/' -i $HOME/.oh-my-bash/themes/font/font.theme.sh
-sed -i "s/^[^#]*PS1/#&/" $HOME/.oh-my-bash/themes/font/font.theme.sh
+sed -i "s/^[^#]*PS1/# &/" $HOME/.oh-my-bash/themes/font/font.theme.sh
 sed -i "/#.*PS1/a \ \ \ \ ${ps1Sub}" $HOME/.oh-my-bash/themes/font/font.theme.sh
+sed -i "s/alias gcm='git checkout master'/alias gcm='git commit -m'/" $HOME/.oh-my-bash/plugins/git/git.plugin.sh
 
 # COPY CONFIG FILES
 cp copyq-commands.ini $HOME/.config/copyq/
