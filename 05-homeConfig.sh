@@ -9,7 +9,8 @@ fi
 copyq &
 
 # MAKE CONFIG DIRECTORIES
-sed -i -e "\$aalias ll='ls -ahl'" $HOME/.bashrc
+sed -i -e '$aalias ll="ls -ahl"' $HOME/.bashrc
+sed -i -e '$aalias clean-chromium-cache="rm -Rf ~/.cache/chromium/Default/Cache"' $HOME/.bashrc
 mkdir -p $HOME/.config/openbox/
 
 # INSTALL OH-MY-BASH
