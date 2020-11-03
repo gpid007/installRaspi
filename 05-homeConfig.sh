@@ -12,6 +12,14 @@ copyq &
 sed -i -e "\$aalias ll='ls -ahl'" $HOME/.bashrc
 mkdir -p $HOME/.config/openbox/
 
+# INSTALL OH-MY-BASH
+ohMyBashUrl='https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh'
+ps1Sub='PS1="${bold_cyan}\\u ${white}${AWS_PROFILE} ${bold_cyan}\\W $(scm_prompt_char_info)${ret_status}${normal}\\$ "'
+bash -c "$(curl -fsSL $ohMyBashUrl)"
+# sed -e '/PS1/ s/^#*/#/' -i $HOME/.oh-my-bash/themes/font/font.theme.sh
+sed -i "s/^[^#]*PS1/#&/" $HOME/.oh-my-bash/themes/font/font.theme.sh
+sed -i "/#.*PS1/a \ \ \ \ ${ps1Sub}" $HOME/.oh-my-bash/themes/font/font.theme.sh
+
 # COPY CONFIG FILES
 cp copyq-commands.ini $HOME/.config/copyq/
 cp copyq.conf $HOME/.config/copyq/
@@ -34,3 +42,4 @@ xbindkeys
 
 # MESSAGE
 echo -e "\n\tPlease reboot now!"
+
