@@ -20,6 +20,7 @@ sudo tar -C /usr/local -xzf go.tar.gz
 
 # SET PATHS
 cat <<\EOF >>$HOME/.bashrc
+alias wally='$HOME/go/bin/linux_arm64/wally-cli'
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$PATH:$GOPATH/bin
 export CC=aarch64-linux-gnu-gcc
@@ -31,7 +32,7 @@ EOF
 
 # BUILD WALLY
 go get -u github.com/zsa/wally-cli
-ls -ahl $HOME/go/bin/linux_arm64/
+echo -e "Run:\n\twally <firmware-file>"
 
 
 # # WALLY UDEV RULE
