@@ -42,6 +42,10 @@ xbindkeys
 # obconf
 # obmenu
 
+cat <<\EOF >>$HOME/.bashrc
+alias clean-chromium-cache='rm -Rf $HOME/.cache/chromium/Default/Cache'
+EOF
+
 # MESSAGE
 echo -e "\n\tPlease reboot now!"
 
