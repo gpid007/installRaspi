@@ -10,7 +10,7 @@ fi
 # GLOBALS
 goUrl='https://dl.google.com/go/go1.13.7.linux-armv6l.tar.gz'
 wallyBin='https://configure.ergodox-ez.com/wally/linux'
-wallyGit='github.com/zsa/wally-cli'
+wallyCli='github.com/zsa/wally-cli'
 
 # INSTALL
 declare -A packageAA=(
@@ -42,11 +42,8 @@ ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}
 ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
 KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
-
 # STM32 rules for the Moonlander and Planck EZ
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
-    MODE:="0666", \
-    SYMLINK+="stm32_dfu"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
 EOF
 
 # ADD USER TO PLUGDEV GROUP
@@ -71,6 +68,8 @@ else
         export CGO_ENABLED=1
 EOF
     . $HOME/.bashrc
-    go get -u $wallyGit
-    echo -e "Run:\n\twally-cli <firmware-file>"
+    go get -u $wallyCli
+    echo -e "Now you can run wally like this:\n\twally-cli <firmware-file>"
 fi
+
+echo 'Done.'
